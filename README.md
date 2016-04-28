@@ -1,3 +1,5 @@
 # DOTFILES
 
 .vimrc
+
+.tmux.conf
