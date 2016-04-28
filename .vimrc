@@ -1,20 +1,3 @@
-colorscheme ron
-syntax on
-set laststatus=2
-set tabstop=2
-set autoindent
-set expandtab
-set shiftwidth=2
-set softtabstop=2
-
-set mouse=a
-
-noremap <Down> gj
-noremap <Up> gk
-
-" 予測候補の表示
-inoremap <S-TAB> <C-X><C-P>
-
 
 "---------------------------
 " Start Neobundle Settings.
@@ -48,6 +31,15 @@ NeoBundle 'Shougo/vimproc', {
 
 NeoBundle 'HybridText'
 
+" solarized
+NeoBundle 'altercation/vim-colors-solarized'
+" mustang
+NeoBundle 'croaker/mustang-vim'
+" jellybeans
+NeoBundle 'nanotech/jellybeans.vim'
+" molokai
+NeoBundle 'tomasr/molokai'
+
 call neobundle#end()
  
 " Required:
@@ -60,3 +52,23 @@ NeoBundleCheck
 "-------------------------
 " End Neobundle Settings.
 "-------------------------
+
+colorscheme molokai
+syntax on
+set laststatus=2
+set tabstop=2
+set autoindent
+set expandtab
+set shiftwidth=2
+set softtabstop=2
+
+set mouse=a
+set paste
+
+noremap <Down> gj
+noremap <Up> gk
+
+" 予測候補の表示
+inoremap <S-TAB> <C-X><C-P>
+
+
