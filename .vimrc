@@ -67,8 +67,12 @@ set paste
 
 noremap <Down> gj
 noremap <Up> gk
+noremap <C-s> :w<CR>
+noremap <C-q> :q<CR>
+noremap <C-i> i
+noremap <C-a> a
 
 " 予測候補の表示
 inoremap <S-TAB> <C-X><C-P>
 
-
+set clipboard=unnamedplus
