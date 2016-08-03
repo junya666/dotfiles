@@ -31,6 +31,8 @@ NeoBundle 'Shougo/vimproc', {
 
 NeoBundle 'HybridText'
 
+NeoBundleLazy 'jelera/vim-javascript-syntax', {'autoload':{'filetypes':['javascript']}}
+
 " solarized
 NeoBundle 'altercation/vim-colors-solarized'
 " mustang
@@ -39,6 +41,8 @@ NeoBundle 'croaker/mustang-vim'
 NeoBundle 'nanotech/jellybeans.vim'
 " molokai
 NeoBundle 'tomasr/molokai'
+" srcery
+NeoBundle 'roosta/srcery'
 
 call neobundle#end()
  
@@ -53,6 +57,7 @@ NeoBundleCheck
 " End Neobundle Settings.
 "-------------------------
 
+"autocmd ColorScheme * highlight LineNr ctermfg=6
 colorscheme molokai
 syntax on
 set laststatus=2
@@ -64,6 +69,7 @@ set softtabstop=2
 
 set mouse=a
 set paste
+set number
 
 noremap <Down> gj
 noremap <Up> gk
@@ -74,5 +80,6 @@ noremap <C-a> a
 
 " 予測候補の表示
 inoremap <S-TAB> <C-X><C-P>
+inoremap <S-S> <C-c>
 
 set clipboard=unnamedplus
