@@ -61,11 +61,7 @@ NeoBundleCheck
 colorscheme molokai
 syntax on
 set laststatus=2
-set tabstop=2
 set autoindent
-set expandtab
-set shiftwidth=2
-set softtabstop=2
 
 set mouse=a
 set paste
@@ -83,3 +79,8 @@ inoremap <S-TAB> <C-X><C-P>
 inoremap <S-S> <C-c>
 
 set clipboard=unnamedplus
+
+set fileencoding=utf-8
+
+set expandtab tabstop=2 softtabstop=2 shiftwidth=2
+
