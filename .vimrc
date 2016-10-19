@@ -58,11 +58,11 @@ NeoBundleCheck
 "-------------------------
 
 "autocmd ColorScheme * highlight LineNr ctermfg=6
-colorscheme molokai
+colorscheme ron
 syntax on
 set laststatus=2
 set autoindent
-
+set noswapfile
 set mouse=a
 set paste
 set number
@@ -73,10 +73,9 @@ noremap <C-s> :w<CR>
 noremap <C-q> :q<CR>
 noremap <C-i> i
 noremap <C-a> a
-
 " 予測候補の表示
-inoremap <S-TAB> <C-X><C-P>
-inoremap <S-S> <C-c>
+inoremap <S-TAB> <C-x><C-p>
+"inoremap <S-S> <C-c>
 
 set clipboard=unnamedplus
 
