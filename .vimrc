@@ -64,18 +64,19 @@ set laststatus=2
 set autoindent
 set noswapfile
 set mouse=a
-set paste
+"pasteモードだとimapが効かない
+"set paste
 set number
 
 noremap <Down> gj
 noremap <Up> gk
 noremap <C-s> :w<CR>
 noremap <C-q> :q<CR>
-noremap <C-i> i
-noremap <C-a> a
-" 予測候補の表示
-inoremap <S-TAB> <C-x><C-p>
-"inoremap <S-S> <C-c>
+" インサートモード時の移動
+inoremap <c-j> <down>
+inoremap <c-k> <up>
+inoremap <c-h> <left>
+inoremap <c-l> <right>
 
 set clipboard=unnamedplus
 
