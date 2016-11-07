@@ -11,7 +11,6 @@ call neobundle#begin(expand('~/.vim/bundle/'))
 " neobundle自体をneobundleで管理
 NeoBundleFetch 'Shougo/neobundle.vim'
  
-" 今後このあたりに追加のプラグインをどんどん書いて行きます！！"
 NeoBundleLazy 'nosami/Omnisharp', {
 			\   'autoload': {'filetypes': ['cs']},
 			\   'build': {
@@ -57,6 +56,9 @@ NeoBundleCheck
 " End Neobundle Settings.
 "-------------------------
 
+
+" Uniteってのが強いらしい
+
 "autocmd ColorScheme * highlight LineNr ctermfg=6
 colorscheme ron
 syntax on
@@ -72,15 +74,21 @@ noremap <Down> gj
 noremap <Up> gk
 noremap <C-s> :w<CR>
 noremap <C-q> :q<CR>
-" インサートモード時の移動
+" コントロールキー移動
+noremap <c-j> <down>
+noremap <c-k> <up>
+noremap <c-h> <left>
+noremap <c-l> <right>
 inoremap <c-j> <down>
 inoremap <c-k> <up>
 inoremap <c-h> <left>
 inoremap <c-l> <right>
+inoremap <C-;> <BS>
 
 set clipboard=unnamedplus
 
 set fileencoding=utf-8
 
 set expandtab tabstop=2 softtabstop=2 shiftwidth=2
+
 
