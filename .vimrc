@@ -1,4 +1,3 @@
-
 "---------------------------
 " Start Neobundle Settings.
 "---------------------------
@@ -11,14 +10,6 @@ call neobundle#begin(expand('~/.vim/bundle/'))
 " neobundle自体をneobundleで管理
 NeoBundleFetch 'Shougo/neobundle.vim'
  
-NeoBundleLazy 'nosami/Omnisharp', {
-			\   'autoload': {'filetypes': ['cs']},
-			\   'build': {
-			\     'mac': 'xbuild server/OmniSharp.sln',
-			\     'unix': 'xbuild server/OmniSharp.sln',
-			\   }
-			\ }
-
 NeoBundle 'Shougo/vimproc', {
   \ 'build' : {
     \ 'windows' : 'make -f make_mingw32.mak',
@@ -59,36 +50,33 @@ NeoBundleCheck
 
 " Uniteってのが強いらしい
 
-"autocmd ColorScheme * highlight LineNr ctermfg=6
 colorscheme ron
+
 syntax on
 set laststatus=2
 set autoindent
 set noswapfile
 set mouse=a
-"pasteモードだとimapが効かない
-"set paste
-set number
+set number "行番号の表示
+"set hlsearch "検索文字のハイライト表示
+"set incsearch "文字確定前から検索
+set ignorecase "大文字小文字を区別しない
+set smartcase "パターンに大文字小文字が混在する場合は区別する
+set expandtab tabstop=2 softtabstop=2 shiftwidth=2
+set fileencoding=utf-8
+
+" since Vim 8.0
+set clipboard+=unnamed
+set backspace=2
 
 noremap <Down> gj
 noremap <Up> gk
-noremap <C-s> :w<CR>
+noremap <C-w> :w<CR>
 noremap <C-q> :q<CR>
-" コントロールキー移動
-noremap <c-j> <down>
-noremap <c-k> <up>
-noremap <c-h> <left>
-noremap <c-l> <right>
-inoremap <c-j> <down>
-inoremap <c-k> <up>
-inoremap <c-h> <left>
-inoremap <c-l> <right>
-inoremap <C-;> <BS>
-
-set clipboard=unnamedplus
-
-set fileencoding=utf-8
-
-set expandtab tabstop=2 softtabstop=2 shiftwidth=2
-
+nnoremap <C-d> 5j
+nnoremap <C-u> 5k
+nnoremap <C-j> <Esc>
+inoremap <C-j> <Esc>
+vnoremap <C-j> <Esc>
+cnoremap <C-j> <Esc>
 
