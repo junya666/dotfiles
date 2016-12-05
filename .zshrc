@@ -41,6 +41,8 @@ export PATH=/usr/local/bin:$PATH
 # android studio
 export PATH=~/Library/Android/sdk/platform-tools:$PATH
 
+export PGDATA=/usr/local/var/postgres
+
 # rbenv
 #[[ -d ~/.rbenv  ]] && \
 #  export PATH=${HOME}/.rbenv/bin:${PATH} && \
@@ -65,6 +67,3 @@ autoload -U compinit
 compinit -C
 zstyle ':completion:*:default' menu select=2
 
-#
-#stty -ixon -ixoff
-#tmux
