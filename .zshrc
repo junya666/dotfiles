@@ -28,7 +28,14 @@ alias vitmp='vi ~/tmp/tmp.txt'
 #alias less='/usr/share/vim/vim74/macros/less.sh'
 alias todo='sh ~/shellscripts/quicktodo/todo.sh'
 alias diary='sh ~/shellscripts/quickdiary/diary.sh'
+alias vimnote='vim ~/Dropbox/note/'
 alias rm='rmtrash'
+alias vi='vim'
+cdls ()
+{
+  \cd "$@" && ls
+}
+alias cd="cdls"
 
 ##KEY##
 if [ -f "${HOME}/.zsh_keys" ]

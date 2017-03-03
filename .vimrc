@@ -23,6 +23,14 @@ NeoBundle 'HybridText'
 
 NeoBundleLazy 'jelera/vim-javascript-syntax', {'autoload':{'filetypes':['javascript']}}
 
+" Previm
+NeoBundle 'kannokanno/previm'
+augroup PrevimSettings
+  autocmd!
+  autocmd BufNewFile,BufRead *.{md,mdwn,mkd,mkdn,mark*} set filetype=markdown
+augroup END
+let g:previm_open_cmd = 'open -a Firefox'
+
 " solarized
 NeoBundle 'altercation/vim-colors-solarized'
 " mustang
