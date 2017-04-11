@@ -50,6 +50,8 @@ export PATH=~/Library/Android/sdk/platform-tools:$PATH
 
 export PGDATA=/usr/local/var/postgres
 
+export WORDCHARS="*?_-.[]~=&;!#$%^(){}<>"
+
 # rbenv
 #[[ -d ~/.rbenv  ]] && \
 #  export PATH=${HOME}/.rbenv/bin:${PATH} && \

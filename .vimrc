@@ -3,7 +3,7 @@
 "---------------------------
 " bundleで管理するディレクトリを指定
 set runtimepath+=~/.vim/bundle/neobundle.vim/
- 
+
 " Required:
 call neobundle#begin(expand('~/.vim/bundle/'))
  
@@ -30,6 +30,7 @@ augroup PrevimSettings
   autocmd BufNewFile,BufRead *.{md,mdwn,mkd,mkdn,mark*} set filetype=markdown
 augroup END
 let g:previm_open_cmd = 'open -a Firefox'
+let g:previm_enable_realtime = 1
 
 " solarized
 NeoBundle 'altercation/vim-colors-solarized'
