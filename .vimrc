@@ -23,6 +23,13 @@ NeoBundle 'HybridText'
 
 NeoBundleLazy 'jelera/vim-javascript-syntax', {'autoload':{'filetypes':['javascript']}}
 
+" 検索リアルタイムハイライト
+NeoBundle 'haya14busa/incsearch.vim'
+map /  <Plug>(incsearch-forward)
+map ?  <Plug>(incsearch-backward)
+map g/ <Plug>(incsearch-stay)
+"set hlsearch "検索文字のハイライト表示
+
 " Previm
 NeoBundle 'kannokanno/previm'
 augroup PrevimSettings
@@ -67,7 +74,6 @@ set autoindent
 set noswapfile
 set mouse=a
 set number "行番号の表示
-"set hlsearch "検索文字のハイライト表示
 "set incsearch "文字確定前から検索
 set ignorecase "大文字小文字を区別しない
 set smartcase "パターンに大文字小文字が混在する場合は区別する
@@ -82,7 +88,7 @@ noremap <Down> gj
 noremap <Up> gk
 noremap <C-w> :w<CR>
 noremap <C-q> :q<CR>
-nnoremap <C-j> <Esc>
+cnoremap <C-j> <Esc>
 inoremap <C-j> <Esc>
 vnoremap <C-j> <Esc>
 
