@@ -86,12 +86,13 @@ set backspace=2
 
 noremap <Down> gj
 noremap <Up> gk
-noremap <C-w> :w<CR>
-noremap <C-q> :q<CR>
+
 cnoremap <C-j> <Esc>
 inoremap <C-j> <Esc>
 vnoremap <C-j> <Esc>
 
 nnoremap <C-j> 4j
 nnoremap <C-k> 4k
+nnoremap <C-h> ^
+nnoremap <C-l> $
 
