@@ -24,10 +24,10 @@ NeoBundle 'HybridText'
 NeoBundleLazy 'jelera/vim-javascript-syntax', {'autoload':{'filetypes':['javascript']}}
 
 " 検索リアルタイムハイライト
-NeoBundle 'haya14busa/incsearch.vim'
-map /  <Plug>(incsearch-forward)
-map ?  <Plug>(incsearch-backward)
-map g/ <Plug>(incsearch-stay)
+"NeoBundle 'haya14busa/incsearch.vim'
+"map /  <Plug>(incsearch-forward)
+"map ?  <Plug>(incsearch-backward)
+"map g/ <Plug>(incsearch-stay)
 "set hlsearch "検索文字のハイライト表示
 
 " Previm
