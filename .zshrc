@@ -48,6 +48,9 @@ export PATH=/usr/local/bin:$PATH
 # android studio
 export PATH=~/Library/Android/sdk/platform-tools:$PATH
 
+# pandoc
+export PATH=/usr/local/Cellar/pandoc/1.19.2.1/bin:$PATH
+
 export PGDATA=/usr/local/var/postgres
 
 export WORDCHARS="*?_-.[]~=&;!#$%^(){}<>"

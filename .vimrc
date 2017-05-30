@@ -93,6 +93,6 @@ vnoremap <C-j> <Esc>
 
 nnoremap <C-j> 4j
 nnoremap <C-k> 4k
-nnoremap <C-h> ^
-nnoremap <C-l> $
+nnoremap <C-h> 4h
+nnoremap <C-l> 4l
 
