@@ -67,18 +67,21 @@ NeoBundleCheck
 " Uniteってのが強いらしい
 
 colorscheme ron
-
 syntax on
+
 set laststatus=2
 set autoindent
 set noswapfile
 set mouse=a
 set number "行番号の表示
+set expandtab tabstop=4 softtabstop=4 shiftwidth=4
+set fileencoding=utf-8
+
+"" 検索
 "set incsearch "文字確定前から検索
+set hlsearch " 検索ハイライト
 set ignorecase "大文字小文字を区別しない
 set smartcase "パターンに大文字小文字が混在する場合は区別する
-set expandtab tabstop=2 softtabstop=2 shiftwidth=2
-set fileencoding=utf-8
 
 " since Vim 8.0
 set clipboard+=unnamed
@@ -91,8 +94,8 @@ cnoremap <C-j> <Esc>
 inoremap <C-j> <Esc>
 vnoremap <C-j> <Esc>
 
-nnoremap <C-j> 4j
-nnoremap <C-k> 4k
-nnoremap <C-h> 4h
-nnoremap <C-l> 4l
+nnoremap <C-j> 3j
+nnoremap <C-k> 3k
+nnoremap <C-h> ^
+nnoremap <C-l> $
 

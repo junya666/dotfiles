@@ -1,16 +1,8 @@
-#
-# Executes commands at the start of an interactive session.
-#
-# Authors:
-#   Sorin Ionescu <sorin.ionescu@gmail.com>
-#
 
 # Source Prezto.
 #if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
 #  source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
 #fi
-
-# Customize to your needs...
 
 alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
@@ -31,6 +23,8 @@ alias diary='sh ~/shellscripts/quickdiary/diary.sh'
 alias vimnote='vim ~/Dropbox/note/'
 alias rm='rmtrash'
 alias vi='vim'
+
+# cd直後にオートls
 cdls ()
 {
   \cd "$@" && ls
@@ -66,13 +60,23 @@ export WORDCHARS="*?_-.[]~=&;!#$%^(){}<>"
 autoload -Uz colors; colors
 # 一般ユーザ時
 tmp_prompt="%F{green}%n:%~%f$ "
+PROMPT=$tmp_prompt    # 通常のプロンプト
 
 # rootユーザ時(太字にし、アンダーバーをつける)
 #if [ ${UID} -eq 0 ]; then
 #  tmp_prompt="%B%U${tmp_prompt}%u%b"
 #fi
 
-PROMPT=$tmp_prompt    # 通常のプロンプト
+# プロンプトにgitブランチを表示
+autoload -Uz vcs_info
+setopt prompt_subst
+zstyle ':vcs_info:git:*' check-for-changes true
+zstyle ':vcs_info:git:*' stagedstr "%F{yellow}!"
+zstyle ':vcs_info:git:*' unstagedstr "%F{red}+"
+zstyle ':vcs_info:*' formats "%F{green}%c%u[%b]%f"
+zstyle ':vcs_info:*' actionformats '[%b|%a]'
+precmd () { vcs_info }
+RPROMPT=$RPROMPT'${vcs_info_msg_0_}'
 
 # 補完候補選択
 autoload -U compinit
