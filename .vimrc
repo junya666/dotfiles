@@ -89,6 +89,7 @@ set backspace=2
 noremap <Down> gj
 noremap <Up> gk
 
+nnoremap <C-j> <nop>
 cnoremap <C-j> <Esc>
 inoremap <C-j> <Esc>
 vnoremap <C-j> <Esc>
