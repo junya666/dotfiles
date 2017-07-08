@@ -97,3 +97,6 @@ vnoremap <C-j> <Esc>
 noremap <C-h> ^
 noremap <C-l> $
 
+inoremap ( ()<LEFT>
+inoremap { {}<LEFT>
+
