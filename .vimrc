@@ -93,8 +93,6 @@ cnoremap <C-j> <Esc>
 inoremap <C-j> <Esc>
 vnoremap <C-j> <Esc>
 
-nnoremap <C-j> 3j
-nnoremap <C-k> 3k
-nnoremap <C-h> ^
-nnoremap <C-l> $
+noremap <C-h> ^
+noremap <C-l> $
 
