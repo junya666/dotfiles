@@ -1,9 +1,10 @@
 
-# Source Prezto.
+## Source Prezto.
 #if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
 #  source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
 #fi
 
+## Aliases
 alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
@@ -24,38 +25,35 @@ alias vimnote='vim ~/Dropbox/note/'
 alias rm='rmtrash'
 alias vi='vim'
 
-# cd直後にオートls
+## cd直後にオートls
 cdls ()
 {
   \cd "$@" && ls
 }
 alias cd="cdls"
 
-##KEY##
+## KEY
 if [ -f "${HOME}/.zsh_keys" ]
 then
       source "${HOME}/.zsh_keys"
 fi
 
-## PATH ##
+## PATH
 export PATH=/usr/local/bin:$PATH
 # android studio
 export PATH=~/Library/Android/sdk/platform-tools:$PATH
-
-# pandoc
+## pandoc
 export PATH=/usr/local/Cellar/pandoc/1.19.2.1/bin:$PATH
-
 export PGDATA=/usr/local/var/postgres
-
 export WORDCHARS="*?_-.[]~=&;!#$%^(){}<>"
 
-# rbenv
+## rbenv
 #[[ -d ~/.rbenv  ]] && \
 #  export PATH=${HOME}/.rbenv/bin:${PATH} && \
 #  eval "$(rbenv init -)"
 
 
-### Prompt ###
+## Prompt
 # プロンプトに色を付ける
 autoload -Uz colors; colors
 # 一般ユーザ時
@@ -67,7 +65,7 @@ PROMPT=$tmp_prompt    # 通常のプロンプト
 #  tmp_prompt="%B%U${tmp_prompt}%u%b"
 #fi
 
-# プロンプトにgitブランチを表示
+## プロンプトにgitブランチを表示
 autoload -Uz vcs_info
 setopt prompt_subst
 zstyle ':vcs_info:git:*' check-for-changes true
@@ -78,8 +76,9 @@ zstyle ':vcs_info:*' actionformats '[%b|%a]'
 precmd () { vcs_info }
 RPROMPT=$RPROMPT'${vcs_info_msg_0_}'
 
-# 補完候補選択
+## 補完候補選択
 autoload -U compinit
 compinit -C
 zstyle ':completion:*:default' menu select=2
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
 
