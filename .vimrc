@@ -1,6 +1,4 @@
-"---------------------------
-" Start Neobundle Settings.
-"---------------------------
+
 " bundleで管理するディレクトリを指定
 set runtimepath+=~/.vim/bundle/neobundle.vim/
 
@@ -30,7 +28,7 @@ NeoBundleLazy 'jelera/vim-javascript-syntax', {'autoload':{'filetypes':['javascr
 "map g/ <Plug>(incsearch-stay)
 "set hlsearch "検索文字のハイライト表示
 
-" Previm
+"" Previm
 NeoBundle 'kannokanno/previm'
 augroup PrevimSettings
   autocmd!
@@ -87,6 +85,7 @@ set smartcase "パターンに大文字小文字が混在する場合は区別�
 set clipboard+=unnamed
 set backspace=2
 
+"" Mapping
 noremap <Down> gj
 noremap <Up> gk
 
