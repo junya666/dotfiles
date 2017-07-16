@@ -21,9 +21,11 @@ alias vitmp='vi ~/tmp/tmp.txt'
 #alias less='/usr/share/vim/vim74/macros/less.sh'
 alias todo='sh ~/shellscripts/quicktodo/todo.sh'
 alias diary='sh ~/shellscripts/quickdiary/diary.sh'
-alias vimnote='vim ~/Dropbox/note/'
+#alias vinote='vim ~/Dropbox/note/'
 alias rm='rmtrash'
 alias vi='vim'
+
+
 
 ## cd直後にオートls
 cdls ()
@@ -81,4 +83,22 @@ autoload -U compinit
 compinit -C
 zstyle ':completion:*:default' menu select=2
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
+
+## VIMノートを開く
+
+function note ()
+{
+    if [ $1 = "-l" ]; then
+        ls ~/Dropbox/note/
+    else
+        vim ~/Dropbox/note/${1}
+    fi
+}
+
+function _note() {
+    _files -W ~/Dropbox/note && return 0;
+    return 1;
+}
+
+compdef _note note
 
