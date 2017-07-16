@@ -93,10 +93,12 @@ nnoremap <C-j> <nop>
 cnoremap <C-j> <Esc>
 inoremap <C-j> <Esc>
 vnoremap <C-j> <Esc>
-noremap <C-j> <Esc>
+nnoremap <C-j> <Esc>
 
 noremap <C-h> ^
+cnoremap <C-h> ^
 noremap <C-l> $
+cnoremap <C-l> $
 
 "inoremap ( ()<LEFT>
 "inoremap () ()
