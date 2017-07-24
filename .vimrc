@@ -101,11 +101,7 @@ noremap <C-l> $
 cnoremap <C-l> $
 
 "inoremap ( ()<LEFT>
-"inoremap () ()
 "inoremap { {}<LEFT>
-"inoremap {} {}
 "inoremap < <><LEFT>
-"inoremap <> <>
 "inoremap [ []<LEFT>
-"inoremap [] []
 

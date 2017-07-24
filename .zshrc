@@ -24,6 +24,7 @@ alias diary='sh ~/shellscripts/quickdiary/diary.sh'
 #alias vinote='vim ~/Dropbox/note/'
 alias rm='rmtrash'
 alias vi='vim'
+alias jsc='/System/Library/Frameworks/JavaScriptCore.framework/Versions/A/Resources/jsc'
 
 
 
