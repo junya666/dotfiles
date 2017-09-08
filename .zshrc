@@ -25,6 +25,7 @@ alias diary='sh ~/shellscripts/quickdiary/diary.sh'
 alias rm='rmtrash'
 alias vi='vim'
 alias jsc='/System/Library/Frameworks/JavaScriptCore.framework/Versions/A/Resources/jsc'
+alias adb_sqlite='~/shellscripts/adb_sqlite.sh'
 
 
 
@@ -102,4 +103,7 @@ function _note() {
 }
 
 compdef _note note
+
+## glob展開でファイルが見つからなくてもそのまま処理する
+setopt nonomatch
 

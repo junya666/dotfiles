@@ -48,6 +48,9 @@ NeoBundle 'tomasr/molokai'
 " srcery
 NeoBundle 'roosta/srcery'
 
+" 括弧で単語囲むやつ
+NeoBundle 'surround.vim'
+
 call neobundle#end()
  
 " Required:
@@ -97,8 +100,14 @@ nnoremap <C-j> <Esc>
 
 noremap <C-h> ^
 cnoremap <C-h> ^
+vnoremap <C-h> ^
 noremap <C-l> $
 cnoremap <C-l> $
+vnoremap <C-l> $
+
+" surround用
+nmap si ysiw
+
 
 "inoremap ( ()<LEFT>
 "inoremap { {}<LEFT>
