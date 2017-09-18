@@ -1,3 +1,6 @@
+"-------------------------
+" Begin Neobundle Settings.
+"-------------------------
 
 " bundleで管理するディレクトリを指定
 set runtimepath+=~/.vim/bundle/neobundle.vim/
@@ -8,6 +11,7 @@ call neobundle#begin(expand('~/.vim/bundle/'))
 " neobundle自体をneobundleで管理
 NeoBundleFetch 'Shougo/neobundle.vim'
  
+" 非同期処理
 NeoBundle 'Shougo/vimproc', {
   \ 'build' : {
     \ 'windows' : 'make -f make_mingw32.mak',
@@ -17,8 +21,10 @@ NeoBundle 'Shougo/vimproc', {
   \ },
   \ }
 
+" いい感じにハイライト
 NeoBundle 'HybridText'
 
+" JavaScriptをうまくハイライト
 NeoBundleLazy 'jelera/vim-javascript-syntax', {'autoload':{'filetypes':['javascript']}}
 
 " 検索リアルタイムハイライト
@@ -28,7 +34,7 @@ NeoBundleLazy 'jelera/vim-javascript-syntax', {'autoload':{'filetypes':['javascr
 "map g/ <Plug>(incsearch-stay)
 "set hlsearch "検索文字のハイライト表示
 
-"" Previm
+" Previm
 NeoBundle 'kannokanno/previm'
 augroup PrevimSettings
   autocmd!
@@ -37,25 +43,19 @@ augroup END
 let g:previm_open_cmd = 'open -a Firefox'
 let g:previm_enable_realtime = 1
 
-" solarized
-NeoBundle 'altercation/vim-colors-solarized'
-" mustang
-NeoBundle 'croaker/mustang-vim'
-" jellybeans
-NeoBundle 'nanotech/jellybeans.vim'
-" molokai
-NeoBundle 'tomasr/molokai'
-" srcery
-NeoBundle 'roosta/srcery'
+"VIM MarkDown TOC
+NeoBundle 'mzlogin/vim-markdown-toc'
 
 " 括弧で単語囲むやつ
 NeoBundle 'surround.vim'
+
+" Uniteってのが強いらしい
 
 call neobundle#end()
  
 " Required:
 filetype plugin indent on
- 
+
 " 未インストールのプラグインがある場合、インストールするかどうかを尋ねてくれるようにする設定
 " 毎回聞かれると邪魔な場合もあるので、この設定は任意です。
 NeoBundleCheck
@@ -65,7 +65,7 @@ NeoBundleCheck
 "-------------------------
 
 
-" Uniteってのが強いらしい
+
 
 colorscheme ron
 syntax on
@@ -96,7 +96,9 @@ nnoremap <C-j> <nop>
 cnoremap <C-j> <Esc>
 inoremap <C-j> <Esc>
 vnoremap <C-j> <Esc>
-nnoremap <C-j> <Esc>
+
+nnoremap <C-j> 2j
+nnoremap <C-k> 2k
 
 noremap <C-h> ^
 cnoremap <C-h> ^
@@ -107,10 +109,4 @@ vnoremap <C-l> $
 
 " surround用
 nmap si ysiw
-
-
-"inoremap ( ()<LEFT>
-"inoremap { {}<LEFT>
-"inoremap < <><LEFT>
-"inoremap [ []<LEFT>
 
