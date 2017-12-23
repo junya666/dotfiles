@@ -50,6 +50,8 @@ export PATH=~/Library/Android/sdk/platform-tools:$PATH
 export PATH=/usr/local/Cellar/pandoc/1.19.2.1/bin:$PATH
 export PGDATA=/usr/local/var/postgres
 export WORDCHARS="*?_-.[]~=&;!#$%^(){}<>"
+# node 
+export PATH=$PATH:~/.nodebrew/current/bin
 
 ## rbenv
 #[[ -d ~/.rbenv  ]] && \

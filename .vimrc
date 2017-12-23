@@ -40,11 +40,13 @@ augroup PrevimSettings
   autocmd!
   autocmd BufNewFile,BufRead *.{md,mdwn,mkd,mkdn,mark*} set filetype=markdown
 augroup END
-let g:previm_open_cmd = 'open -a Firefox'
+let g:previm_open_cmd = 'open -a Google\ Chrome'
 let g:previm_enable_realtime = 1
 
 "VIM MarkDown TOC
 NeoBundle 'mzlogin/vim-markdown-toc'
+
+NeoBundle 'altercation/vim-colors-solarized'
 
 " 括弧で単語囲むやつ
 NeoBundle 'surround.vim'
@@ -67,7 +69,7 @@ NeoBundleCheck
 
 
 
-colorscheme ron
+"colorscheme ron
 syntax on
 
 set laststatus=2
@@ -88,6 +90,9 @@ set smartcase "パターンに大文字小文字が混在する場合は区別�
 set clipboard+=unnamed
 set backspace=2
 
+" fileencodings
+set fileencodings=utf-8,cp932,euc-jp,sjis
+
 "" Mapping
 noremap <Down> gj
 noremap <Up> gk
@@ -100,13 +105,26 @@ vnoremap <C-j> <Esc>
 nnoremap <C-j> 2j
 nnoremap <C-k> 2k
 
-noremap <C-h> ^
-cnoremap <C-h> ^
+nnoremap <C-h> ^
 vnoremap <C-h> ^
 noremap <C-l> $
 cnoremap <C-l> $
 vnoremap <C-l> $
 
-" surround用
-nmap si ysiw
+"選択範囲の文字列で検索
+vnoremap * y/<C-r>"<Enter>
 
+" surround用
+nmap sw ysiw
+vmap s S
+
+" ノーマルモード時に自動英数
+if has('mac')
+    "set ttimeoutlen=1
+    let g:imeoff = 'swim use com.apple.keyboardlayout.all'
+    augroup MyIMEGroup
+        autocmd!
+        autocmd InsertLeave * :call system(g:imeoff)
+    augroup END
+    "noremap <silent> <ESC> <ESC>:call system(g:imeoff)<CR>
+endif
