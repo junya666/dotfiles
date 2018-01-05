@@ -16,12 +16,9 @@ alias l='ls -CF'
 #alias treel='tree -L'
 #alias clipboard='xsel -ib'
 #alias tmux="TERM=xterm-256color tmux"
-#alias eow='python ~/python_projects/eijiro/eow.py'
 alias vitmp='vi ~/tmp/tmp.txt'
 #alias less='/usr/share/vim/vim74/macros/less.sh'
 alias todo='sh ~/shellscripts/quicktodo/todo.sh'
-alias diary='sh ~/shellscripts/quickdiary/diary.sh'
-#alias vinote='vim ~/Dropbox/note/'
 alias rm='rmtrash'
 alias vi='vim'
 alias jsc='/System/Library/Frameworks/JavaScriptCore.framework/Versions/A/Resources/jsc'
@@ -105,6 +102,29 @@ function _note() {
 }
 
 compdef _note note
+
+## diary
+
+function diary()
+{
+    if [ ${#@} -eq 1 ]; then
+        filename=`date -v${1}d '+%y%m%d%a'`.txt
+    else
+        filename=`date '+%y%m%d%a'`.txt
+    fi
+
+    if [ $? -eq 0 ]; then
+        vi ~/Dropbox/.diary/${filename}
+    fi
+}
+
+function _diary() {
+    _files -W ~/Dropbox/.diary && return 0;
+    return 1;
+}
+
+compdef _diary diary
+
 
 ## glob展開でファイルが見つからなくてもそのまま処理する
 setopt nonomatch
